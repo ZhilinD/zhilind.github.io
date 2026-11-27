@@ -9,80 +9,69 @@
 <style>
 :root {
   color-scheme:light;
-  --paper:#faf9f5;
-  --white:#fffefa;
-  --ink:#20271f;
-  --muted:#50574a;
-  --green:#29493a;
-  --dark:#1c322a;
-  --lime:#e1f2ac;
-  --line:#dedfd5;
+  --text:#202a3a;
+  --muted:#546276;
+  --accent:#235091;
+  --line:#dbe2ee;
   --body:system-ui,-apple-system,"PingFang SC",sans-serif;
-  --serif:"Iowan Old Style",Georgia,"Songti SC",serif;
 }
 * { box-sizing:border-box; }
-html { scroll-padding-top:2rem; }
-body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.65 var(--body); }
-h1,h2,h3,p,ol,figure { margin:0; }
-h1,h2 { font-family:var(--serif); line-height:1.05; font-weight:600; }
-a { color:var(--green); text-underline-offset:.22em; }
+html { scroll-padding-top:1.2rem; }
+body { margin:0; color:var(--text); background:#fff; font:1rem/1.65 var(--body); }
+h1,h2,h3,p,ol { margin:0; }
+a { color:var(--accent); text-underline-offset:.22em; }
 a:hover { text-decoration-thickness:2px; }
-a:focus-visible { outline:3px solid #537c55; outline-offset:4px; }
-.wrap { width:min(71rem,calc(100% - 4rem)); margin-inline:auto; }
-.skip { position:absolute; top:-7rem; left:1rem; background:var(--white); padding:.5rem; z-index:2; }
+a:focus-visible { outline:3px solid #3878c5; outline-offset:4px; }
+.wrap { width:min(63rem,calc(100% - 3rem)); margin-inline:auto; }
+.skip { position:absolute; top:-7rem; left:1rem; padding:.5rem; background:#fff; z-index:2; }
 .skip:focus { top:.5rem; }
-header .wrap { display:flex; justify-content:space-between; align-items:center; gap:1rem; min-height:4.6rem; border-bottom:1px solid var(--line); }
-.brand { font-weight:780; color:var(--ink); text-decoration:none; white-space:nowrap; }
-nav { display:flex; flex-wrap:wrap; gap:.5rem clamp(.9rem,3vw,1.8rem); }
-nav a { text-decoration:none; font-size:.9rem; font-weight:630; }
+header { border-bottom:1px solid var(--line); }
+header .wrap { min-height:3.85rem; display:flex; justify-content:space-between; align-items:center; gap:1rem; }
+.brand { color:var(--text); font-weight:750; white-space:nowrap; text-decoration:none; }
+nav { display:flex; flex-wrap:wrap; gap:.35rem 1.25rem; }
+nav a { font-size:.9rem; font-weight:650; text-decoration:none; }
 nav a:hover { text-decoration:underline; }
-.intro { display:grid; grid-template-columns:minmax(0,.89fr) minmax(0,1.11fr); gap:clamp(2rem,6vw,5rem); align-items:center; padding:clamp(2.8rem,7vw,5.5rem) 0 clamp(3rem,7vw,5rem); }
-h1 { font-size:clamp(4.1rem,8vw,7.75rem); letter-spacing:-.075em; }
-.cn { margin-top:.5rem; color:var(--green); font-weight:730; letter-spacing:.14em; }
-.bio { max-width:32rem; margin-top:1rem; color:var(--muted); font-size:1.05rem; }
-.links { display:flex; flex-wrap:wrap; gap:.55rem 1rem; font-size:.92rem; font-weight:700; margin-top:1.05rem; }
-.feature { display:block; color:white; background:var(--dark); text-decoration:none; border-radius:.85rem; padding:.65rem; box-shadow:0 1.25rem 2.75rem #17261919; }
-.feature-media { display:block; position:relative; aspect-ratio:16/9; overflow:hidden; border-radius:.45rem; background:#314b37; }
-.feature-media img { width:100%; height:100%; display:block; object-fit:cover; }
-.feature-media::after { content:""; position:absolute; inset:0; background:linear-gradient(155deg,#15281525,transparent 45%,#14271762); }
-.feature-caption { display:flex; align-items:center; gap:.85rem; justify-content:space-between; padding:.85rem .5rem .3rem; }
-.feature-caption strong { display:block; font-family:var(--serif); font-size:clamp(1.55rem,3vw,2.1rem); line-height:1.1; }
-.feature-caption span span { display:block; color:#d7e6da; font-size:.86rem; margin-top:.25rem; }
-.feature-caption .watch { color:var(--lime); font-size:.87rem; font-weight:700; white-space:nowrap; }
-.feature:hover .watch { text-decoration:underline; }
-section { border-top:1px solid var(--line); padding:2.15rem 0 2.85rem; }
-section h2 { font-size:clamp(2.15rem,4.6vw,3.5rem); letter-spacing:-.05em; }
-.pubs { margin-top:1.35rem; }
-.paper { display:grid; grid-template-columns:11.5rem minmax(0,1fr); gap:1.15rem 2rem; padding:1.3rem .75rem; border-bottom:1px solid var(--line); }
-.paper:first-child { border-top:1px solid var(--line); }
-.paper:target { background:#edf0e5; }
-.venue { color:var(--green); font-weight:760; font-size:.9rem; }
-.venue span { display:block; font-size:.89rem; color:var(--muted); font-weight:500; }
-.paper h3 { font-size:1.15rem; line-height:1.42; }
-.paper h3 a { color:var(--ink); text-decoration:none; }
-.paper h3 a:hover { color:var(--green); text-decoration:underline; }
-.authors,.summary { margin-top:.36rem; font-size:.92rem; color:var(--muted); }
-.authors strong { color:var(--ink); }
-.paper .links { margin-top:.65rem; }
-.paper .links a { text-decoration:none; font-size:.875rem; padding:.19rem .58rem; border:1px solid #d7dbcb; border-radius:.3rem; }
-.paper .links a:hover { background:#e7eddf; text-decoration:underline; }
-.equal { font-size:.88rem; color:var(--muted); margin-top:.85rem; }
-.news { list-style:none; padding:0; margin-top:1.05rem; }
-.news li { display:grid; grid-template-columns:6.2rem 1fr; gap:.75rem; padding:.32rem 0; }
-time { font-variant-numeric:tabular-nums; color:var(--muted); font-size:.9rem; }
-footer { border-top:1px solid var(--line); padding:1.2rem 0 1.55rem; color:var(--muted); font-size:.9rem; }
+.layout { display:grid; grid-template-columns:12.5rem minmax(0,1fr); gap:clamp(2rem,6vw,4.5rem); padding-top:clamp(2rem,5vw,4rem); }
+.profile { align-self:start; padding-right:1rem; }
+h1 { font-size:2.15rem; line-height:1.12; letter-spacing:-.05em; }
+.cn { color:var(--muted); margin-top:.42rem; font-size:.95rem; }
+.affiliation { margin-top:1.15rem; color:var(--muted); font-size:.92rem; }
+.affiliation strong { color:var(--text); }
+.profile-links { display:flex; gap:.33rem .9rem; flex-wrap:wrap; margin-top:.9rem; font-weight:700; font-size:.9rem; }
+section { padding:1.6rem 0; border-top:1px solid var(--line); }
+section:first-child { border-top:0; padding-top:0; }
+section h2 { font-size:1.35rem; line-height:1.25; letter-spacing:-.022em; margin-bottom:.58rem; }
+.bio { max-width:43rem; color:var(--muted); }
+.edu { display:flex; gap:.35rem 1.25rem; flex-wrap:wrap; justify-content:space-between; color:var(--muted); }
+.edu strong { color:var(--text); }
+.paper { border-top:1px solid var(--line); padding:1rem 0; }
+.paper:first-child { border-top:0; padding-top:.24rem; }
+.paper:last-child { padding-bottom:0; }
+.paper:target { background:#f4f7fc; }
+.venue { font-size:.875rem; color:var(--accent); font-weight:750; }
+.paper h3 { font-size:1.04rem; line-height:1.4; margin-top:.22rem; }
+.paper h3 a { color:var(--text); text-decoration:none; }
+.paper h3 a:hover { color:var(--accent); text-decoration:underline; }
+.authors,.summary { font-size:.91rem; color:var(--muted); margin-top:.26rem; }
+.authors strong { color:var(--text); }
+.links { display:flex; flex-wrap:wrap; gap:.25rem .85rem; margin-top:.45rem; font-size:.89rem; font-weight:680; }
+.equal { font-size:.88rem; color:var(--muted); margin-top:.7rem; }
+.news { list-style:none; padding:0; }
+.news li { display:grid; grid-template-columns:5.7rem minmax(0,1fr); gap:.6rem; padding:.24rem 0; font-size:.95rem; }
+time { color:var(--muted); font-size:.875rem; font-variant-numeric:tabular-nums; }
+footer { border-top:1px solid var(--line); padding:1rem 0 1.4rem; color:var(--muted); font-size:.88rem; }
 footer .wrap { display:flex; justify-content:space-between; gap:1rem; }
-@media (max-width:760px) {
+@media (max-width:680px) {
   .wrap { width:calc(100% - 2rem); }
-  .intro { grid-template-columns:1fr; }
-  .feature { max-width:37rem; }
-  .paper { grid-template-columns:1fr; gap:.42rem; padding-inline:0; }
-  .venue span { display:inline; margin-left:.45rem; }
+  .layout { grid-template-columns:1fr; gap:1.55rem; }
+  .profile { padding:0 0 1.3rem; border-bottom:1px solid var(--line); }
+  .affiliation { margin-top:.55rem; }
+  .profile-links { margin-top:.55rem; }
 }
-@media (max-width:375px) {
-  header .wrap { flex-wrap:wrap; gap:.3rem; padding:.65rem 0; min-height:0; }
-  .news li { grid-template-columns:5.2rem 1fr; gap:.35rem; }
-  .feature-caption { gap:.5rem; padding-inline:.2rem; }
+@media (max-width:370px) {
+  header .wrap { flex-wrap:wrap; gap:.35rem; padding:.65rem 0; }
+  nav { gap:.35rem .85rem; }
+  footer .wrap { flex-wrap:wrap; gap:.35rem; }
 }
 </style>
 </head>
@@ -91,67 +80,67 @@ footer .wrap { display:flex; justify-content:space-between; gap:1rem; }
 <header>
   <div class="wrap">
     <a class="brand" href="#top">Zhilin D</a>
-    <nav aria-label="Main navigation"><a href="#publications">Publications</a><a href="#news">News</a><a href="https://github.com/ZhilinD">GitHub</a></nav>
+    <nav aria-label="Main navigation"><a href="#about">About</a><a href="#publications">Publications</a><a href="#news">News</a></nav>
   </div>
 </header>
-<main class="wrap" id="main" tabindex="-1">
-  <div class="intro">
-    <div>
-      <h1>Zhilin D</h1>
-      <p class="cn" lang="zh-CN">戴智林</p>
-      <p class="bio">I am a master’s student in the Multimedia Computing Group at Nanjing University. My research focuses on video understanding and vision-language models, including streaming video captioning and efficient video-text representation learning.</p>
-      <div class="links"><a href="https://mcg.nju.edu.cn/en/member.html">NJU Multimedia Computing Group</a></div>
-    </div>
-    <a class="feature" href="https://mcg-nju.github.io/SoccerNarrate/" aria-label="SoccerNarrate, watch demos on the project website">
-      <span class="feature-media"><img src="assets/soccernarrate.jpg" width="1040" height="586" alt="A frame from the SoccerNarrate full-match commentary demo"></span>
-      <span class="feature-caption">
-        <span><strong>SoccerNarrate</strong><span>NeurIPS 2026 · Real-time soccer commentary</span></span>
-        <span class="watch">Watch demo</span>
-      </span>
-    </a>
+<main class="wrap layout" id="main" tabindex="-1">
+  <aside class="profile" aria-label="Academic profile">
+    <h1>Zhilin D</h1>
+    <p class="cn" lang="zh-CN">戴智林</p>
+    <p class="affiliation"><strong>Master’s student</strong><br>Nanjing University</p>
+    <div class="profile-links"><a href="https://github.com/ZhilinD">GitHub</a><a href="https://mcg.nju.edu.cn/en/member.html">NJU MCG</a></div>
+  </aside>
+  <div class="content">
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About me</h2>
+      <p class="bio">I am a master’s student in the Multimedia Computing Group at Nanjing University. I work on video understanding and vision-language models, with a focus on streaming video captioning and efficient video-text representation learning.</p>
+    </section>
+    <section id="education" aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+      <p class="edu"><strong>Nanjing University</strong><span>Master’s studies</span></p>
+    </section>
+    <section id="publications" aria-labelledby="publications-title">
+      <h2 id="publications-title">Selected publications</h2>
+      <div class="pubs">
+        <article class="paper" id="soccer">
+          <p class="venue">NeurIPS 2026 · Poster</p>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2611.32153">SoccerNarrate: Event-Grounded Streaming Soccer Commentary with Macro-Window Preference Alignment</a></h3>
+            <p class="authors">Zihan Jia*, <strong>Zhilin Dai*</strong>, Zhengming Zhang*, Min Yang, Zhenpeng Huang, Jiaqi Li, Caixia Sun, Xi Chen, Liang Li, Junlan Feng, Gangshan Wu, Limin Wang</p>
+            <p class="summary">Aligns streaming commentary with match events so that key plays can be described accurately and on time.</p>
+            <div class="links"><a href="https://arxiv.org/abs/2611.32153" aria-label="SoccerNarrate paper on arXiv">Paper</a><a href="https://github.com/MCG-NJU/SoccerNarrate" aria-label="SoccerNarrate code on GitHub">Code</a><a href="https://mcg-nju.github.io/SoccerNarrate/">Project &amp; demos</a></div>
+          </div>
+        </article>
+        <article class="paper" id="videocap">
+          <p class="venue">Computer Vision and Image Understanding · 2026</p>
+          <div>
+            <h3><a href="https://doi.org/10.1016/j.cviu.2026.104905">VideoCap-R1: Enhancing multimodal large language models for detailed video captioning via structured thinking</a></h3>
+            <p class="authors">Desen Meng, Rui Huang, Jiaqi Li, <strong>Zhilin Dai</strong>, Xinhao Li, Yifan Xu, Jun Zhang, Zhenpeng Huang, Meng Zhang, Yi Liu, Limin Wang</p>
+            <p class="summary">Uses structured reasoning and reinforcement learning to improve detailed descriptions of people, objects, actions, and events in video.</p>
+            <div class="links"><a href="https://doi.org/10.1016/j.cviu.2026.104905" aria-label="VideoCap-R1 journal article">Paper</a></div>
+          </div>
+        </article>
+        <article class="paper" id="mobile">
+          <p class="venue">ICCV 2025</p>
+          <div>
+            <h3><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Yang_MobileViCLIP_An_Efficient_Video-Text_Model_for_Mobile_Devices_ICCV_2025_paper.html">MobileViCLIP: An Efficient Video-Text Model for Mobile Devices</a></h3>
+            <p class="authors">Min Yang, Zihan Jia, <strong>Zhilin Dai</strong>, Sheng Guo, Limin Wang</p>
+            <p class="summary">Builds a lightweight video-text model for on-device inference, with evaluations on zero-shot retrieval and action recognition.</p>
+            <div class="links"><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Yang_MobileViCLIP_An_Efficient_Video-Text_Model_for_Mobile_Devices_ICCV_2025_paper.html" aria-label="MobileViCLIP ICCV paper">Paper</a><a href="https://github.com/MCG-NJU/MobileViCLIP" aria-label="MobileViCLIP code on GitHub">Code</a></div>
+          </div>
+        </article>
+      </div>
+      <p class="equal">* Equal contribution.</p>
+    </section>
+    <section id="news" aria-labelledby="news-title">
+      <h2 id="news-title">News</h2>
+      <ol class="news">
+        <li><time datetime="2026-11">Nov 2026</time><p><a href="#soccer">SoccerNarrate</a> was released on arXiv and accepted to NeurIPS 2026 as a poster.</p></li>
+        <li><time datetime="2026-10">Oct 2026</time><p><a href="#videocap">VideoCap-R1</a> is published in <em>Computer Vision and Image Understanding</em>.</p></li>
+        <li><time datetime="2025-10">Oct 2025</time><p><a href="#mobile">MobileViCLIP</a> appears in the ICCV 2025 proceedings.</p></li>
+      </ol>
+    </section>
   </div>
-
-  <section id="publications" aria-labelledby="publications-title">
-    <h2 id="publications-title">Selected publications</h2>
-    <div class="pubs">
-      <article class="paper" id="soccer">
-        <p class="venue">NeurIPS 2026<span>Poster</span></p>
-        <div>
-          <h3><a href="https://arxiv.org/abs/2611.32153">SoccerNarrate: Event-Grounded Streaming Soccer Commentary with Macro-Window Preference Alignment</a></h3>
-          <p class="authors">Zihan Jia*, <strong>Zhilin Dai*</strong>, Zhengming Zhang*, Min Yang, Zhenpeng Huang, Jiaqi Li, Caixia Sun, Xi Chen, Liang Li, Junlan Feng, Gangshan Wu, Limin Wang</p>
-          <p class="summary">Aligns streaming commentary with match events so that key plays can be described accurately and on time.</p>
-          <div class="links"><a href="https://arxiv.org/abs/2611.32153" aria-label="SoccerNarrate paper on arXiv">Paper</a><a href="https://github.com/MCG-NJU/SoccerNarrate" aria-label="SoccerNarrate code on GitHub">Code</a><a href="https://mcg-nju.github.io/SoccerNarrate/">Project &amp; demos</a></div>
-        </div>
-      </article>
-      <article class="paper" id="videocap">
-        <p class="venue">CVIU 2026<span>Journal article</span></p>
-        <div>
-          <h3><a href="https://doi.org/10.1016/j.cviu.2026.104905">VideoCap-R1: Enhancing multimodal large language models for detailed video captioning via structured thinking</a></h3>
-          <p class="authors">Desen Meng, Rui Huang, Jiaqi Li, <strong>Zhilin Dai</strong>, Xinhao Li, Yifan Xu, Jun Zhang, Zhenpeng Huang, Meng Zhang, Yi Liu, Limin Wang</p>
-          <p class="summary">Uses structured reasoning and reinforcement learning to improve detailed descriptions of people, objects, actions, and events in video.</p>
-          <div class="links"><a href="https://doi.org/10.1016/j.cviu.2026.104905" aria-label="VideoCap-R1 journal article">Paper</a></div>
-        </div>
-      </article>
-      <article class="paper" id="mobile">
-        <p class="venue">ICCV 2025</p>
-        <div>
-          <h3><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Yang_MobileViCLIP_An_Efficient_Video-Text_Model_for_Mobile_Devices_ICCV_2025_paper.html">MobileViCLIP: An Efficient Video-Text Model for Mobile Devices</a></h3>
-          <p class="authors">Min Yang, Zihan Jia, <strong>Zhilin Dai</strong>, Sheng Guo, Limin Wang</p>
-          <p class="summary">Builds a lightweight video-text model for on-device inference, with evaluations on zero-shot retrieval and action recognition.</p>
-          <div class="links"><a href="https://openaccess.thecvf.com/content/ICCV2025/html/Yang_MobileViCLIP_An_Efficient_Video-Text_Model_for_Mobile_Devices_ICCV_2025_paper.html" aria-label="MobileViCLIP ICCV paper">Paper</a><a href="https://github.com/MCG-NJU/MobileViCLIP" aria-label="MobileViCLIP code on GitHub">Code</a></div>
-        </div>
-      </article>
-    </div>
-    <p class="equal">* Equal contribution.</p>
-  </section>
-  <section id="news" aria-labelledby="news-title">
-    <h2 id="news-title">News</h2>
-    <ol class="news">
-      <li><time datetime="2026-11">Nov 2026</time><p><a href="#soccer">SoccerNarrate</a> was released on arXiv and accepted to NeurIPS 2026 as a poster.</p></li>
-      <li><time datetime="2026-10">Oct 2026</time><p><a href="#videocap">VideoCap-R1</a> is published in <em>Computer Vision and Image Understanding</em>.</p></li>
-      <li><time datetime="2025-10">Oct 2025</time><p><a href="#mobile">MobileViCLIP</a> appears in the ICCV 2025 proceedings.</p></li>
-    </ol>
-  </section>
 </main>
 <footer><div class="wrap"><p>Zhilin D · Nanjing University</p><a href="#top">Back to top</a></div></footer>
 </body>
